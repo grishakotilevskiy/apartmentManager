@@ -1,0 +1,52 @@
+[
+  {
+    "Id": "d73e2a10-4c5d-4b7f-8a1b-2c3d4e5f6a7b",
+    "City": "Київ",
+    "Street": "Хрещатик, 15",
+    "Rooms": 3,
+    "Area": 85.5,
+    "Price": 150000,
+    "Floor": 4,
+    "IsRenovated": true
+  },
+  {
+    "Id": "b12c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+    "City": "Львів",
+    "Street": "Площа Ринок, 3",
+    "Rooms": 2,
+    "Area": 54.0,
+    "Price": 95000,
+    "Floor": 2,
+    "IsRenovated": false
+  },
+  {
+    "Id": "f5e4d3c2-b1a0-9f8e-7d6c-5b4a3f2e1d0c",
+    "City": "Одеса",
+    "Street": "Дерибасівська, 10",
+    "Rooms": 1,
+    "Area": 38.2,
+    "Price": 45000,
+    "Floor": 3,
+    "IsRenovated": true
+  },
+  {
+    "Id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "City": "Харків",
+    "Street": "Сумська, 25",
+    "Rooms": 2,
+    "Area": 60.0,
+    "Price": 55000,
+    "Floor": 5,
+    "IsRenovated": false
+  },
+  {
+    "Id": "12345678-1234-1234-1234-1234567890ab",
+    "City": "Київ",
+    "Street": "Оболонський проспект, 12",
+    "Rooms": 1,
+    "Area": 42.0,
+    "Price": 62000,
+    "Floor": 9,
+    "IsRenovated": true
+  }
+]
