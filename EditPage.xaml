@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="labka3.EditPage"
+             Title="Редагування"
+             BackgroundColor="#ECF0F1">
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20">
+            <Label Text="Дані про квартиру" FontSize="20" FontAttributes="Bold" TextColor="#2C3E50"/>
+            
+            <Entry x:Name="EntryCity" Placeholder="Місто" TextColor="Black" PlaceholderColor="Gray"/>
+            <Entry x:Name="EntryStreet" Placeholder="Вулиця" TextColor="Black" PlaceholderColor="Gray"/>
+            
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <Entry Grid.Column="0" x:Name="EntryRooms" Placeholder="Кількість кімнат" Keyboard="Numeric" TextColor="Black" PlaceholderColor="Gray"/>
+                <Entry Grid.Column="1" x:Name="EntryFloor" Placeholder="Поверх" Keyboard="Numeric" TextColor="Black" PlaceholderColor="Gray"/>
+            </Grid>
+            
+            <Entry x:Name="EntryArea" Placeholder="Площа (кв.м)" Keyboard="Numeric" TextColor="Black" PlaceholderColor="Gray"/>
+            <Entry x:Name="EntryPrice" Placeholder="Ціна ($)" Keyboard="Numeric" TextColor="Black" PlaceholderColor="Gray"/>
+            
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Є ремонт:" VerticalOptions="Center" TextColor="#2C3E50"/>
+                <CheckBox x:Name="CheckRenovated" Color="#27AE60"/>
+            </HorizontalStackLayout>
+
+            <Button Text="Зберегти" Clicked="OnSaveClicked" BackgroundColor="#27AE60" TextColor="White"/>
+            <Button Text="Скасувати" Clicked="OnCancelClicked" BackgroundColor="#7F8C8D" TextColor="White"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

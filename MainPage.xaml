@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="labka3.MainPage"
+             Title="Квартирний Менеджер"
+             BackgroundColor="#ECF0F1">
+
+    <Grid RowDefinitions="Auto, Auto, *, Auto" Padding="10" RowSpacing="10">
+
+        <Grid Grid.Row="0" ColumnDefinitions="Auto, Auto, Auto, *, Auto" ColumnSpacing="5">
+            <Button Grid.Column="0" Text="Відкрити" Clicked="OnLoadClicked" BackgroundColor="#3498DB" TextColor="White"/>
+            <Button Grid.Column="1" Text="Зберегти" Clicked="OnSaveClicked" BackgroundColor="#2980B9" TextColor="White"/>
+            <Button Grid.Column="2" Text="Додати" Clicked="OnAddClicked" BackgroundColor="#27AE60" TextColor="White"/>
+
+            <Button Grid.Column="4" Text="Вихід" Clicked="OnExitClicked" BackgroundColor="#C0392B" TextColor="White" FontAttributes="Bold"/>
+        </Grid>
+
+        <StackLayout Grid.Row="1" BackgroundColor="White" Padding="10">
+            <Label Text="Пошук та фільтрація" FontAttributes="Bold" TextColor="#2C3E50"/>
+            <Grid ColumnDefinitions="*,*,*, Auto" ColumnSpacing="5">
+                <Entry Grid.Column="0" x:Name="SearchCity" Placeholder="Місто" TextColor="Black"/>
+                <Entry Grid.Column="1" x:Name="SearchMinPrice" Placeholder="Мін. ціна" Keyboard="Numeric" TextColor="Black"/>
+                <Entry Grid.Column="2" x:Name="SearchMinRooms" Placeholder="Мін. кімнат" Keyboard="Numeric" TextColor="Black"/>
+                <Button Grid.Column="3" Text="Знайти" Clicked="OnSearchClicked" BackgroundColor="#34495E" TextColor="White"/>
+            </Grid>
+            <Button Text="Скинути фільтр" Clicked="OnResetFilterClicked" Margin="0,5,0,0" BackgroundColor="#95A5A6" TextColor="White"/>
+        </StackLayout>
+
+        <CollectionView Grid.Row="2" x:Name="ApartmentsList" SelectionMode="Single">
+            <CollectionView.Header>
+                <Grid ColumnDefinitions="2*, 2*, 1*, 1.5*, 1.5*, 1.5*" Padding="10" BackgroundColor="#2C3E50">
+                    <Label Grid.Column="0" Text="Місто" TextColor="White" FontAttributes="Bold"/>
+                    <Label Grid.Column="1" Text="Вулиця" TextColor="White" FontAttributes="Bold"/>
+                    <Label Grid.Column="2" Text="Кімн." TextColor="White" FontAttributes="Bold"/>
+                    <Label Grid.Column="3" Text="Площа" TextColor="White" FontAttributes="Bold"/>
+                    <Label Grid.Column="4" Text="Ціна" TextColor="White" FontAttributes="Bold"/>
+                    <Label Grid.Column="5" Text="Дії" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="2*, 2*, 1*, 1.5*, 1.5*, 1.5*" Padding="5" BackgroundColor="White">
+                        <Label Grid.Column="0" Text="{Binding City}" VerticalOptions="Center" TextColor="Black"/>
+                        <Label Grid.Column="1" Text="{Binding Street}" VerticalOptions="Center" TextColor="Black"/>
+                        <Label Grid.Column="2" Text="{Binding Rooms}" VerticalOptions="Center" TextColor="Black"/>
+                        <Label Grid.Column="3" Text="{Binding Area}" VerticalOptions="Center" TextColor="Black"/>
+                        <Label Grid.Column="4" Text="{Binding Price}" VerticalOptions="Center" TextColor="Black"/>
+                        <HorizontalStackLayout Grid.Column="5" Spacing="5" HorizontalOptions="Center">
+                            <Button Text="E" Clicked="OnEditItemClicked" CommandParameter="{Binding .}" WidthRequest="40" HeightRequest="35" Padding="0" BackgroundColor="#F39C12" TextColor="White"/>
+                            <Button Text="X" Clicked="OnDeleteItemClicked" CommandParameter="{Binding .}" WidthRequest="40" HeightRequest="35" Padding="0" BackgroundColor="#C0392B" TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Grid Grid.Row="3" ColumnDefinitions="*, Auto">
+            <Label Grid.Column="0" x:Name="StatusLabel" Text="Готово" FontSize="12" TextColor="Gray"/>
+            <Button Grid.Column="1" Text="Про програму" Clicked="OnAboutClicked" FontSize="12" BackgroundColor="Transparent" TextColor="Gray"/>
+        </Grid>
+    </Grid>
+</ContentPage>
