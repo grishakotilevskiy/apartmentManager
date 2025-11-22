@@ -27,7 +27,7 @@
 
         private async void OnSaveClicked(object sender, EventArgs e)
         {
-            // ВАЛІДАЦІЯ (Захист від дурня)
+      
             if (string.IsNullOrWhiteSpace(EntryCity.Text) || string.IsNullOrWhiteSpace(EntryStreet.Text))
             {
                 await DisplayAlert("Помилка", "Заповніть Місто та Вулицю.", "OK");
